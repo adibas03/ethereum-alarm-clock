@@ -1,6 +1,31 @@
 Changelog
 =========
 
+0.9.1
+-----
+
+ - Replaced term `donation` and `donationBenefactor` with `fee` and `feeRecipient` (done)
+ - Replaced term `payment` to `bounty`. (done)
+ - Removed the hardcoding of FEE_RECIPIENT to be passed in on creation of schedulers. (done)
+ - Added an indexed parameter to `RequestCreated()` event in RequestFactory.sol (done)
+ - Peg contracts to compiler version 0.4.19 (done)
+ - Change `paymentData.hasBenefactor()` to `paymentData.hasFeeRecipient()` (done)
+ - Tidied up and cleaned the test suite. ( in progress )
+
+0.9.0-beta
+----------
+
+- Update contracts to solidity 0.4.18.
+- Digger.sol removed due to `EIP 150`_ making it obsolete.
+- All stack depth checking also obsolete due to `EIP150`_ removed.
+- SafeSendLib.sol removed due to Solidity keywords `transfer` and `send` making it obsolete.
+- Simplified scheduling API to singular `schedule()` function.
+- Added the `proxy()` function to `TransactionRequest` contract.
+- Integrate Truffle framework.
+- Rewrote entire test suite to use Truffle.
+- Revamped the documentation.
+
+
 0.8.0 (unreleased)
 ------------------
 
@@ -86,5 +111,6 @@ Changelog
 - Initial release.
 
 
+.. _EIP150: https://ethereum.stackexchange.com/questions/9398/how-does-eip-150-change-the-call-depth-attack
 .. _Issue 42: https://github.com/pipermerriam/ethereum-alarm-clock/issues/42
 .. _Grove: https://github.com/pipermerriam/ethereum-grove
